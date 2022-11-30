@@ -5,7 +5,7 @@ Donate link: http://amzn.asia/gw9HHbg
 Requires at least: 5.0
 Tested up to: 6.1.1
 Requires PHP: 5.0
-Stable tag: trunk
+Stable tag: 0.0.1
 License: GPLv2
 License URI: http://www.opensource.jp/gpl/gpl.ja.html
 

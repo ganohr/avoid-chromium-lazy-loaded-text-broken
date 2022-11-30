@@ -8,7 +8,7 @@ for /f "delims=" %%a in (version.txt) do (
 echo VERSION
 echo %version%
 
-set "outpath=.\trunk\%version%"
+set "outpath=.\tags\%version%"
 mkdir %outpath%\
 
 rem copy *.md %outpath%\
@@ -17,6 +17,9 @@ copy *.css %outpath%\
 copy *.js %outpath%\
 copy *.php %outpath%\
 del %outpath%\version.txt
+
+del /F /Q /S .\trunk\
+xcopy %outpath%\ .\trunk\
 
 cd %outpath%
 
