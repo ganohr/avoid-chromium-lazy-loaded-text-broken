@@ -36,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! defined( 'GANOHRS_AVOID_CLLTB_SIGNATURE' ) ) {
 	define(
 		'GANOHRS_AVOID_CLLTB_SIGNATURE',
-		'avoid-chromium-lazy-loaded-text-broken'
+		'avoid-the-chromium-lazy-loading-broken-characters-bug'
 	);
 }
 
@@ -95,9 +95,9 @@ if ( ! function_exists( 'gnraclltb_is_amp' ) ) :
 			return true;
 		} elseif ( function_exists( 'ampforwp_is_amp_endpoint' ) && ampforwp_is_amp_endpoint() ) {
 			return true;
-		} elseif ( array_key_exists($_GET, 'amp') && '1' === $_GET['amp'] ) {
+		} elseif ( array_key_exists( 'amp', $_GET ) && '1' === $_GET['amp'] ) {
 			return true;
-		} elseif ( array_key_exists($_GET, 'type') && 'AMP' === $_GET['type'] ) {
+		} elseif ( array_key_exists( 'type', $_GET ) && 'AMP' === $_GET['type'] ) {
 			return true;
 		}
 		return false;

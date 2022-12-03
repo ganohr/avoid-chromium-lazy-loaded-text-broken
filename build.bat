@@ -23,12 +23,12 @@ xcopy %outpath%\ .\trunk\
 
 cd %outpath%
 
-set "zipfile=..\..\release\avoid-chromium-lazy-loaded-text-broken-%version%.zip"
+set "zipfile=..\..\release\avoid-the-chromium-lazy-loading-broken-characters-bug-%version%.zip"
 del %zipfile%
 
 tar -a -c -f %zipfile% *
 
-set "basefile=..\..\release\avoid-chromium-lazy-loaded-text-broken.zip"
+set "basefile=..\..\release\avoid-the-chromium-lazy-loading-broken-characters-bug.zip"
 del %basefile%
 
 copy %zipfile% %basefile%
