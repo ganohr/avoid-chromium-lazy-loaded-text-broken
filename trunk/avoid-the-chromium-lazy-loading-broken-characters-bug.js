@@ -6,7 +6,7 @@ let fontweights = [];
 
 jQuery(()=>{
 	viewHeight = jQuery(window).innerHeight();
-	elems = jQuery("strong.gaclltb_dummy_area");
+	elems = jQuery("b.gaclltb_dummy");
 	elems = elems.sort((a,b)=>{
 		return jQuery(a).offset().top - jQuery(b).offset().top
 	});

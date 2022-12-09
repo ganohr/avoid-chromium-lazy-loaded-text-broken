@@ -3,7 +3,7 @@
 Plugin Name: Avoid the chromium lazy loading broken characters bug
 Plugin URI: https://ganohr.net/blog/avoid-the-chromium-lazy-loading-broken-characters-bug/
 Description: Avoid the chromium lazy loading broken characters bug.
-Version: 0.0.1
+Version: 0.0.2
 Author: Ganohr
 Author URI: https://ganohr.net/
 License: GPL2
@@ -47,13 +47,13 @@ if ( ! function_exists( 'gnraclltb_append_dumy_elems' ) ) :
 		if ( gnraclltb_is_amp() ) {
 			return $the_content;
 		}
-		$dummy_elem_tag = '<strong class="gaclltb_dummy_area"></strong>';
+		$dummy_elem_tag = '<b class="gaclltb_dummy"></b>';
 		$pattern = "#$dummy_elem_tag#";
 		if ( preg_match( $pattern, $the_content ) ) {
 			return $the_content;
 		}
 		$result = preg_replace(
-			'#(</h[1-6]>|</p>|</div>|</span>)#',
+			'#(</h[1-6]>|</p>|</div>|</span>|</table>)#',
 			"$1$dummy_elem_tag",
 			$the_content
 		);
@@ -74,10 +74,10 @@ if ( ! function_exists( 'gnraclltb_append_dumy_elems' ) ) :
 	add_filter( 'script_loader_tag', 'gnraclltb_loader_tag', 10, 2 );
 
 	function gnraclltb_enqueue_scripts() {
-	    $depend = array( 'jquery-core' );
-	    $js = plugins_url()
-	        . '/' . GANOHRS_AVOID_CLLTB_SIGNATURE
-	        . '/' . GANOHRS_AVOID_CLLTB_SIGNATURE . '.js';
+		$depend = array( 'jquery-core' );
+		$js = plugins_url()
+			. '/' . GANOHRS_AVOID_CLLTB_SIGNATURE
+			. '/' . GANOHRS_AVOID_CLLTB_SIGNATURE . '.js';
 		wp_register_script( GANOHRS_AVOID_CLLTB_SIGNATURE, $js, $depend );
 		wp_enqueue_script ( GANOHRS_AVOID_CLLTB_SIGNATURE, $js, $depend );
 	}
