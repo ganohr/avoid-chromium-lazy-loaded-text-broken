@@ -9,3 +9,6 @@ https://ganohr.net/blog/avoid-the-chromium-lazy-loading-broken-characters-bug/
 # How To Install?
 Please use wordpress...
 https://wordpress.org/plugins/avoid-the-chromium-lazy-loading-broken-characters-bug/
+
+# Chromium Browsers Extensions
+https://github.com/ganohr/avoid-chromium-lazy-loaded-text-broken-extensions
