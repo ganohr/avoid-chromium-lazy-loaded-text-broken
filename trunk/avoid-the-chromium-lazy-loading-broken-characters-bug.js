@@ -15,9 +15,15 @@ jQuery(()=>{
 	for(let i = 0; i < elems.length; i++) {
 		fontweights[i] = jQuery(elems[i]).css('font-weight');
 	}
+	let nowScrolling = false;
 	jQuery(window).scroll(() => {
+		if (nowScrolling) {
+			return;
+		}
+		nowScrolling = true;
 		nowTop = jQuery(window).scrollTop();
 		if(nowTop < viewHeight) {
+			nowScrolling = false;
 			return;
 		}
 		let refreshed = false;
@@ -47,7 +53,13 @@ jQuery(()=>{
 			}
 		}
 		if (refreshed) {
-			setTimeout(()=>updated.fill(false));
+			setTimeout(()=>{
+				nowScrolling = false;
+				updated.fill(false)
+			}, 1000);
+		} else {
+			updated.fill(false)
+			nowScrolling = false;
 		}
 	});
 });
