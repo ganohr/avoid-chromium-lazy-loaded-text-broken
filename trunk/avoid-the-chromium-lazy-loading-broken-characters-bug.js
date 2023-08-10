@@ -36,6 +36,7 @@ jQuery(()=>{
 			} else if(nowTop > elemTop + viewHeight * 0.5) {
 				continue;
 			} else if(false
+				|| elemHtml.indexOf('<h') !== -1
 				|| elemHtml.indexOf('<img') !== -1
 				|| elemHtml.indexOf('<script') !== -1
 				|| elemHtml.indexOf('<iframe') !== -1

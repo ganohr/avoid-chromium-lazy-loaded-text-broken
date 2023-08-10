@@ -3,7 +3,7 @@
 Plugin Name: Avoid the chromium lazy loading broken characters bug
 Plugin URI: https://ganohr.net/blog/avoid-the-chromium-lazy-loading-broken-characters-bug/
 Description: Avoid the chromium lazy loading broken characters bug.
-Version: 0.0.2
+Version: 0.0.4
 Author: Ganohr
 Author URI: https://ganohr.net/
 License: GPL2
